@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import React from "react";
+import {Routes, Navigate, Route} from "react-router-dom";
+import Header from "./components/header/header.component";
+import LeaguePage from "./pages/league-team/league-page.component";
+import NotFound from "./pages/not-found/not-found.component";
+import TeamPage from "./pages/team-page/team-page.component";
 import './App.css';
+import CreditsPage from "./pages/credits/credits-page.component";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<Navigate replace to="/team"/>}/>
+        <Route exact path="/team" element={<TeamPage />}/>
+        <Route exact path="/league" element={<LeaguePage/>}/>
+        <Route exact path="/credits" element={<CreditsPage />}/>
+        <Route component={NotFound}/>
+      </Routes>
     </div>
   );
 }

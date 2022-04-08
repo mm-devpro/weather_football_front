@@ -1,0 +1,16 @@
+.header {
+  margin: 10px 10px 0 10px;
+}
+
+.top-full-nav {
+  position: relative;
+}
+.dropdown {
+  position: absolute !important;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+.dropdown-toggle, .dropdown-menu {
+  width: 20vw;
+}
